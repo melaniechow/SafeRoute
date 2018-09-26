@@ -4,7 +4,6 @@ const fs=require('fs');
 const csv=require('csv-parser');
 const bodyParser=require('body-parser');
 const cors=require('cors');
-const async = require('async');
 const app=express();
 var googleMapsClient = require('@google/maps').createClient({
     key: 'AIzaSyCAOHpGqvNo0M1eRd58Hb2GGJLifR60a3A'
