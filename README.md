@@ -1,8 +1,15 @@
 # SafeRouteApp
 SafeRoute uses public, open source crime data from NY to calculate the safest route to and from any destination in NYC. 
 
-## Comments : 
-Feel free to view the demo video.
+## Get Started : 
+### 1. Visit https://safe-route-app.herokuapp.com/
+### 2. Check off your mode of transportation, the distance within your path that you want to find crimes in, and if you want to include indoor crimes. 
+### 3. Voila! That's it. The map should update in due time. 
+
+### More Comments:
+-The first route displayed on the map is the route with the lowest safety score (meaning the "safest"). 
+-Click the "Toggle Route" button to view alternate routes.
+-Feel free to click on the markers to view more information on the crime.
 
 ## Updates:
 Update: This project began at a hackathon (ByteHacks2018, this can be found in the archived SafeRouteApp repo), and I decided to personally continue this project by furthering its functionality and completing tasks we wish we had finished during the hackathon. 
