@@ -1,0 +1,105 @@
+<h2> <i class="fa fa-map-marker"></i> Get Directions - NYC </h2> 
+<small style="color:gray">
+        <i> Enter An Address, A Restaurant, A Museum. All Powered by Google Maps </i>
+</small>
+<br><br>
+
+<form #locationForm="ngForm" (ngSubmit)="onSubmit(locationForm)">
+    <div class="form-group">
+
+        <label for="travelType"> <b> <i class="fa fa-car"></i> Travel Type </b> </label>
+        <br>
+        
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" checked="checked" type="radio" name="travelType" value="WALKING" ngModel required>
+                    <label class="form-check-label"> Walking </label> 
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="travelType"  value="BICYCLING" ngModel required>
+                    <label class="form-check-label"> Bicycle </label> 
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="travelType" value="DRIVING" ngModel required>
+                    <label class="form-check-label"> Car </label> 
+                </div>
+       <br>
+       <br>
+
+       <label for="crimeDist"> <b> <i class="fa fa-compass"></i> Crimes Within </b> </label>
+        <small style="color:gray">
+                <i> (Average Walking Speed is 5ft/sec ) </i>
+        </small>
+        <br>
+        
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" checked="checked" type="radio" name="crimeDist" value=100 ngModel required>
+                    <label class="form-check-label"> 100 ft </label> 
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="crimeDist"  value=200 ngModel required>
+                    <label class="form-check-label"> 200 ft </label> 
+                </div>
+                <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="crimeDist" value=350 ngModel required>
+                        <label class="form-check-label"> 350 ft </label> 
+                    </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="crimeDist" value=500 ngModel required>
+                    <label class="form-check-label"> 500 ft </label> 
+                </div>
+       <br><br>
+       <label for="crimeLocIn"> <b> <i class="fa fa-building"></i> Include Indoor Crime? </b> </label>
+        <br>
+        
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" checked="checked" type="radio" name="crimeLocIn" value='t' ngModel required>
+                    <label class="form-check-label"> Yes </label> 
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="crimeLocIn" value='f' ngModel required>
+                    <label class="form-check-label"> No </label>
+                </div> 
+       <br>
+        <br>
+        <label for="startLoc"> <b> <i class="fa fa-map-pin" style="color:firebrick"></i> Origin </b> </label>
+        <textarea name='startLoc' class="form-control" [(ngModel)]="startLoc" rows="1" required></textarea>
+
+        <br>
+
+        <label for="endLoc"> <b> <i class="fa fa-map-pin" style="color:darkgreen"></i> Destination </b> </label>
+        <textarea name='endLoc' class="form-control" [(ngModel)]="endLoc" rows="1" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!locationForm.form.valid"> 
+        Get Routes
+    </button>
+</form>
+
+
+<!-- 
+  <div class="form-group">
+  <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+-->
+
+<div *ngIf="destination.address">
+    <br>
+
+    <b> Start Location </b> <br>
+    Address: {{origin.address}} <br>
+    Coordinates: {{origin.lat}}, {{origin.lng}}
+
+    <br><br>
+
+    <b> End Location </b> <br>
+    Address: {{destination.address}} <br>
+    Coordinates: {{destination.lat}}, {{destination.lng}}
+    
+    <br><br>
+    
+    <app-show-map [origin]="origin" [destination]="destination" [travelType]="travelType" [crimeDist]="crimeDist" [indoor]="indoor"></app-show-map>
+</div>
+
+

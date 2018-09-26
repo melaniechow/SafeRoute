@@ -1,0 +1,62 @@
+<div #gmap style="width:100%;height:400px" id="map"></div>
+
+<br>
+<div class="row">
+    <button class="btn btn-primary btn-block" (click)="onDisplayRoute()">
+        Toggle Route Information
+    </button>
+    
+    <a class="btn btn-secondary btn-block" target="_blank" href="https://crime-cluster-map.appspot.com/">
+    NYC Crime Cluster Map
+    </a>
+
+</div>
+
+
+<br>
+
+<div *ngIf="displayRoutes">
+    <div *ngIf="routeArr.length != 0">
+        <div>
+            <div class="row justify-content-md-center">
+                <div *ngFor="let route of routeArr">
+                    <div class="col-md-auto centered">
+                            <button class="btn btn-light" (click)="changeTo(route['summary'])">
+                                    <h6> {{route['summary']}}  </h6> 
+                                    <i>
+                                    Safety Score : {{route['ss']}}
+                                    <br>
+                                    # Crimes : {{route['crimes'].length}}
+                                    <br>
+                                    Duration : {{route['legs'][0]['duration']['text']}} 
+                                    <br>
+                                    Distance : {{route['legs'][0]['distance']['text']}}
+                                    </i>
+                                    <br><br>
+                                    <button class="btn btn-outline-primary btn-sm" (click)="onDisplayDirections()">
+                                        Directions
+                                    </button>
+                                </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div *ngIf="displayDirections">
+        <h4> Directions </h4>
+        <div *ngIf="chosenRoute != null">
+            <div *ngFor="let step of chosenRoute['legs'][0]['steps']">
+                    <div [innerHtml]="step['instructions']">
+                                            
+                    </div>
+                    <i> Info: {{step ['duration']['text']}} | {{step['distance']['text']}}</i>  
+                    <br><br>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+   
