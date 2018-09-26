@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  start:'http://localhost:8000/',
+  start:'https://safe-route-finder.herokuapp.com/',
   apiKey:'AIzaSyCAOHpGqvNo0M1eRd58Hb2GGJLifR60a3A'
 };
