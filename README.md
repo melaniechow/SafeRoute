@@ -1,6 +1,9 @@
 # SafeRouteApp
 SafeRoute uses public, open source crime data from NY to calculate the safest route to and from any destination in NYC. 
 
+## Comments : 
+Feel free to view the demo video.
+
 ## Updates:
 Update: This project began at a hackathon (ByteHacks2018), and I decided to continue this project by furthering its functionality, and completing tasks we wish we had done during the hackathon. 
 
