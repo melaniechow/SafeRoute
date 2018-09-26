@@ -47,6 +47,8 @@ Add a Loading screen. Markers could have better icons
 ### Error Handling:
 Since data is not sensitive, error handling was not a priority when completing features. However, this would be a nice fix.
 ### Customization:
++ Filter by type of crime
++ Filter by Time and Date
 + Different map types (satellite, street, etc)
 + Favorite routes
 + Customize weightings
