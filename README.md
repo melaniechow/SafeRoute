@@ -30,11 +30,11 @@ Generates a heat map based on the start and end points, as well as the distance 
 Generates a‘cluster map’ that groups nearby crime and displays themwith markers using the Google Maps API at a separate tab. The main site offers information about a crime with each marker, while the marker cluster map is meant for grouping and displaying crime in "big picture."
 
 ## Next Steps:
-## UI :
+### UI :
 Add a Loading screen. Markers could have better icons
-## Error Handling:
+### Error Handling:
 Since data is not sensitive, error handling was not a priority when completing features. However, this would be a nice fix.
-## Customization:
+### Customization:
 + Different map types (satellite, street, etc)
 + Favorite routes
 + Customize weightings
