@@ -6,11 +6,8 @@ SafeRoute uses public, open source crime data from NY to calculate the safest ro
 ### 2. Check off your mode of transportation, the distance within your path that you want to find crimes in, and if you want to include indoor crimes. 
 ### 3. Voila! That's it. The map should update in due time. 
 
-### More Comments:
 -The first route displayed on the map is the route with the lowest safety score (meaning the "safest")
-
 -Click the "Toggle Route" button to view alternate routes
-
 -Feel free to click on the markers to view more information on the crime.
 
 
