@@ -1,27 +1,41 @@
 # SafeRouteApp
+SafeRoute uses public, open source crime data from NY to calculate the safest route to and from any destination in NYC. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## Updates:
+Update: This project began at a hackathon (ByteHacks2018), and I decided to continue this project by furthering its functionality, and completing tasks we wish we had done during the hackathon. 
 
-## Development server
+## Features:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Safety Score Calculation
+The application determines a safety score for each route based on the number and type of crime (violation, misdemeanor, felony) along the path. It does this by decoding Google Map polyline routes into a series of latitude and longitude points and then checking if there is are any reported crimes within a user-specified radius. (100ft, 200ft, 350ft, 500ft). 
 
-## Code scaffolding
+Violation  - worth 1 point
+Misdemeanor - worth 2 points
+Felony - worth 3 points
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+** The lower the safety score, the safer the route appears **
 
-## Build
+### Marker Maps
+The application generates markers based on crime information. Simply click on a marker to view more information, such as the official crime description and id, as well as the date, time, and location (inside/outside) the crime took place.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Violation  - yellow marker with 'V' label to indicate mild danger
+Misdemeanor - orange marker with 'M' label to indicate intermediate danger
+Felony - red marker with 'F' label to indicate more pertinent danger
 
-## Running unit tests
+### Heat Map
+Generates a heat map based on the start and end points, as well as the distance between them, to find and display nearby crime and locate crime "hotspots." Scales to the distance between the start and end points.
+(Eg. if start and end point are 10 degrees apart, heat map finds crime that is within 10 degrees of the start and end coordinates, as well as crime within the start and end latitude and longitude bounds.)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Cluster Map
+Generates a‘cluster map’ that groups nearby crime and displays themwith markers using the Google Maps API at a separate tab. The main site offers information about a crime with each marker, while the marker cluster map is meant for grouping and displaying crime in "big picture."
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Next Steps:
+## UI :
+Add a Loading screen. Markers could have better icons
+## Error Handling:
+Since data is not sensitive, error handling was not a priority when completing features. However, this would be a nice fix.
+## Customization:
++ Different map types (satellite, street, etc)
++ Favorite routes
++ Customize weightings
++ Wider radius range for Crime Within
