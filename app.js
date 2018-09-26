@@ -36,7 +36,7 @@ app.listen(PORT || 8000,()=>{
 
 app.use(bodyParser.json());
 
-var distDir = __dirname + "/dist/medivis-tags/";
+var distDir = __dirname + "/dist/SafeRouteApp/";
 app.use(express.static(distDir));
 
 //------- API -----------//
